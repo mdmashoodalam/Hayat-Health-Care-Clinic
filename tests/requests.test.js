@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { appointmentMessage,contactMessage,createWhatsAppURL,validateRequest } from '../src/utils/whatsapp.js';
+const valid={name:'Sample Visitor',phone:'9876543210',age:'',gender:'',service:'General Physician',doctor:'Dr. Md. Rizwan',date:'2030-01-10',time:'09:30',message:'General consultation & enquiry',consent:true};
+test('valid request accepts optional fields and an Indian mobile number',()=>assert.deepEqual(validateRequest(valid,true,new Date('2029-01-01')),{}));
+test('required details and acknowledgement are validated',()=>{const errors=validateRequest({});for(const key of ['name','phone','service','date','time','consent'])assert.ok(errors[key]);});
+test('past dates and elapsed times in India are rejected',()=>{assert.ok(validateRequest({...valid,date:'2020-01-01'},true,new Date('2029-01-01')).date);assert.ok(validateRequest({...valid,date:'2030-01-10',time:'09:30'},true,new Date('2030-01-10T04:01:00Z')).date);});
+test('age, phone, and contact email reject invalid entries',()=>{assert.ok(validateRequest({...valid,age:'-1'}).age);assert.ok(validateRequest({...valid,phone:'123'}).phone);assert.ok(validateRequest({...valid,email:'broken',subject:'Hello'},false).email);});
+test('WhatsApp URL encodes all message data and retains intended recipient',()=>{const message=appointmentMessage({...valid,name:'नमूना & Visitor'});const url=new URL(createWhatsAppURL(message));assert.equal(url.hostname,'wa.me');assert.equal(url.pathname,'/916200397846');assert.equal(url.searchParams.get('text'),message);assert.match(message,/Please confirm my appointment/);assert.match(message,/09:30 \(IST\)/);});
+test('contact request needs subject and message',()=>{const e=validateRequest({name:'Sample Visitor',phone:'9876543210'},false);assert.ok(e.subject);assert.ok(e.message);assert.match(contactMessage({...valid,subject:'Clinic hours',email:''}),/Email: Not provided/);});

@@ -1,0 +1,2 @@
+import { Button,Icon } from '../components/common/UI';
+export default function NotFound(){return <section className="section container not-found"><Icon name="HeartPulse" size={55}/><span className="eyebrow">404 · A SMALL DETOUR</span><h1>Page Not Found</h1><p>We couldn’t find this page. Let’s get you back to care.</p><Button to="/">Return Home<Icon name="ArrowUpRight" size={17}/></Button></section>;}

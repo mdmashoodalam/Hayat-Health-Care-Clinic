@@ -1,0 +1,27 @@
+export const services = [
+  { id:'general-physician', name:'General Physician', icon:'Stethoscope', category:'Consultations', description:'General checkups and consultations for your everyday health concerns.' },
+  { id:'general-surgery', name:'General Surgery', icon:'Scissors', category:'Consultations', description:'Speak with our surgical team about assessment and available surgical care.' },
+  { id:'womens-health', name:'Women’s Health', fullName:'Women’s Health / Obstetrics & Gynaecology', icon:'HeartHandshake', category:'Consultations', description:'Consultations for women’s health, pregnancy and maternity care.' },
+  { id:'physiotherapy', name:'Physiotherapy', icon:'Activity', category:'Therapy & support', description:'Support for movement, mobility and rehabilitation, guided by your care needs.' },
+  { id:'bone-joint', name:'Bone & Joint Care', icon:'Bone', category:'Consultations', description:'Consultations for bone, joint and movement-related concerns.' },
+  { id:'pathology', name:'Blood Testing / Pathology', icon:'Microscope', category:'Diagnostics', description:'Blood testing arrangements to support your clinician’s assessment.' },
+  { id:'kidney-urinary', name:'Kidney & Urinary Care', icon:'Droplets', category:'Consultations', description:'Discuss kidney and urinary concerns with the clinic’s medical team.' },
+  { id:'emergency', name:'Emergency Care', icon:'HeartPulse', category:'Therapy & support', description:'24/7 emergency support. Call the clinic directly for immediate assistance.' },
+  { id:'dental-oral', name:'Dental & Oral Care', icon:'Smile', category:'Consultations', description:'Contact our team to enquire about dental and oral care availability.', confirm:true },
+  { id:'skin', name:'Skin & Dermatology', icon:'Sparkles', category:'Consultations', description:'Contact our team to enquire about consultations for skin concerns.', confirm:true },
+  { id:'liver-chest', name:'Liver & Chest Care', icon:'Stethoscope', category:'Consultations', description:'Medical consultations for liver and chest-related concerns.' },
+  { id:'icu', name:'ICU Support', icon:'Monitor', category:'Therapy & support', description:'ICU facilities are listed by the clinic. Call to discuss current capacity and your needs.' },
+  { id:'ecg', name:'ECG Facility', icon:'Activity', category:'Diagnostics', description:'ECG testing is available. Contact the clinic for arrangements.' },
+  { id:'delivery', name:'Normal Delivery', icon:'Baby', category:'Therapy & support', description:'Maternity and normal delivery services. Contact the team to discuss availability.' },
+];
+export const facilities = [
+  { name:'ICU', icon:'Monitor', description:'Call to check current capacity and support.' },
+  { name:'Oxygen', icon:'Wind', description:'Oxygen facilities available at the clinic.' },
+  { name:'Nebulization', icon:'Cloud', description:'Nebulization as advised by a clinician.' },
+  { name:'Physiotherapy', icon:'Activity', description:'Care to support movement and mobility.' },
+  { name:'ECG', icon:'HeartPulse', description:'On-site ECG testing arrangements.' },
+  { name:'Pathology / Blood Test', icon:'Microscope', description:'Blood testing to support clinical assessment.' },
+  { name:'Pharmacy', icon:'Pill', description:'Enquire about prescribed medicine availability.' },
+  { name:'Emergency Support', icon:'Siren', description:'Contact the clinic directly, 24/7.' },
+  { name:'Normal Delivery', icon:'Baby', description:'Contact the team for maternity care arrangements.' },
+];
