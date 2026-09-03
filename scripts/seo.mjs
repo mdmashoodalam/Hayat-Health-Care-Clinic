@@ -1,7 +1,7 @@
 import { readFile,writeFile,mkdir } from 'node:fs/promises';
 import { loadEnv } from 'vite';
 const env={...loadEnv('production',process.cwd(),''),...process.env};
-const origin=env.VITE_SITE_URL || 'https://hayat-health-care-clinic-pupri.rosy-pony-6331.chatgpt.site';
+const origin=env.VITE_SITE_URL || 'https://hayat-health-care-clinic-pupri.mashoodalam05.chatgpt.site';
 const base=new URL(env.VITE_BASE_PATH||'/',origin);
 const routes={
   '':['Hayat Health Care Clinic Pupri | Doctor & Healthcare Services','Hayat Health Care Clinic in Pupri provides general physician, surgery, physiotherapy, pathology, oxygen, nebulization, emergency and essential healthcare services.'],
@@ -29,3 +29,4 @@ await writeFile('dist/404.html',source.replace('</head>','<meta name="robots" co
 await writeFile('dist/robots.txt',`User-agent: *\nAllow: /\nSitemap: ${new URL('sitemap.xml',base).href}\n`);
 await writeFile('dist/sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${Object.keys(routes).map(r=>`<url><loc>${new URL(r,base).href}</loc></url>`).join('')}</urlset>`);
 console.log('Generated route metadata, clinic schema, sitemap and robots.txt.');
+
