@@ -71,3 +71,4 @@ For a repository site, set `VITE_BASE_PATH=/repository-name/` and `VITE_SITE_URL
 ## Accessibility and performance
 
 Semantic landmarks, one H1 per page, skip link, visible focus states, named controls, form errors linked to fields, keyboard navigation, native dialog focus management, Escape and arrow-key gallery controls, and reduced-motion support. Secondary routes are lazy-loaded; gallery/map assets load lazily. Production Lighthouse scores depend on hosting, fonts, network and third-party map behavior; numerical scores should be measured on the deployed site rather than assumed.
+"# Hayat-Health-Care-Clinic" 
