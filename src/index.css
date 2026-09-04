@@ -11,3 +11,369 @@
 /* Keep the supplied doctor's photograph framed without poster headings. */
 .hero .doctor-crop>img,.spotlight-photo .doctor-crop>img,.card-doctor-photo>img{width:250%;left:-150%;top:0;transform:translateY(-22%)}
 @media(min-width:641px){.card-doctor-photo>img{width:220%;left:-120%;transform:translateY(-24%)}}
+
+/* ================================================================
+   Hayat visual refresh — two brand colours, one consistent language
+   Brand: deep navy + medical teal. White and teal tints are neutrals.
+   ================================================================ */
+:root {
+  --navy: #0b1f4d;
+  --teal: #0f766e;
+  --ink: #0b1f4d;
+  --muted: #536b73;
+  --paper: #f4faf8;
+  --surface: #ffffff;
+  --line: color-mix(in srgb, var(--teal) 16%, white);
+  --pale: var(--paper);
+  --shadow-sm: 0 10px 30px color-mix(in srgb, var(--navy) 8%, transparent);
+  --shadow-lg: 0 24px 70px color-mix(in srgb, var(--navy) 13%, transparent);
+  --radius-sm: 14px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+}
+
+body {
+  color: var(--ink);
+  background: var(--surface);
+}
+
+p { color: var(--muted); }
+
+.topbar {
+  background: var(--navy);
+  border-bottom: 1px solid color-mix(in srgb, var(--teal) 38%, transparent);
+}
+
+.status-dot {
+  background: var(--teal);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--teal) 20%, transparent);
+}
+
+.header {
+  background: color-mix(in srgb, white 92%, transparent);
+  border-color: var(--line);
+}
+
+.header.is-scrolled { box-shadow: var(--shadow-sm); }
+.nav-inner { height: 88px; }
+
+.brand-icon {
+  background: var(--teal);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--teal) 22%, transparent);
+}
+
+.nav-inner nav a { font-weight: 600; }
+
+.button {
+  min-height: 50px;
+  padding: 13px 22px;
+  border-radius: 999px;
+  background: var(--teal);
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--teal) 18%, transparent);
+}
+
+.button:hover {
+  background: color-mix(in srgb, var(--teal) 88%, var(--navy));
+  box-shadow: 0 14px 30px color-mix(in srgb, var(--teal) 24%, transparent);
+}
+
+.button-outline {
+  background: var(--surface);
+  color: var(--navy);
+  border-color: color-mix(in srgb, var(--teal) 24%, white);
+  box-shadow: none;
+}
+
+.button-outline:hover {
+  background: var(--paper);
+  border-color: var(--teal);
+}
+
+.hero {
+  background:
+    radial-gradient(circle at 82% 18%, color-mix(in srgb, var(--teal) 19%, transparent), transparent 34%),
+    linear-gradient(120deg, white 0%, var(--paper) 58%, color-mix(in srgb, var(--teal) 10%, white) 100%);
+  padding: 72px 0 92px;
+}
+
+.hero h1 {
+  color: var(--navy);
+  font-size: clamp(48px, 5vw, 72px);
+  line-height: 1.05;
+  letter-spacing: -0.055em;
+}
+
+.hero h1 > span:first-child {
+  background: none;
+  color: var(--teal);
+}
+
+.hero-copy > p { color: color-mix(in srgb, var(--navy) 72%, white); }
+.hero-copy > .hero-description { color: var(--muted); font-size: 14px; }
+
+.pill {
+  color: var(--teal);
+  background: color-mix(in srgb, white 86%, transparent);
+  border-color: color-mix(in srgb, var(--teal) 25%, white);
+}
+
+.photo-shell {
+  border-radius: var(--radius-lg);
+  border: 8px solid white;
+  box-shadow: var(--shadow-lg);
+  background: color-mix(in srgb, var(--teal) 14%, white);
+}
+
+.doctor-caption,
+.floating-card {
+  border: 1px solid color-mix(in srgb, var(--teal) 16%, white);
+  box-shadow: var(--shadow-sm);
+}
+
+.doctor-caption { border-radius: var(--radius-sm); }
+.floating-card { border-radius: var(--radius-sm); }
+.floating-card strong { color: var(--navy); }
+
+.icon-box,
+.icon-box.red {
+  color: var(--teal);
+  background: color-mix(in srgb, var(--teal) 9%, white);
+  border: 1px solid color-mix(in srgb, var(--teal) 12%, white);
+}
+
+.quick-actions {
+  margin-top: -38px;
+  padding: 14px;
+  border-radius: var(--radius-md);
+  border-color: var(--line);
+  box-shadow: var(--shadow-lg);
+}
+
+.quick-actions > a {
+  min-height: 72px;
+  border-color: var(--line);
+  border-radius: var(--radius-sm);
+  transition: background .2s ease, transform .2s ease;
+}
+
+.quick-actions > a:hover {
+  background: var(--paper);
+  transform: translateY(-2px);
+}
+
+.section { padding-block: clamp(68px, 7vw, 104px); }
+.section-heading { margin-bottom: 44px; }
+.section-heading h2 { font-size: clamp(32px, 3.4vw, 46px); letter-spacing: -.04em; }
+.section-heading > p { font-size: 14px; max-width: 360px; }
+
+.about-panel {
+  background: var(--navy);
+  color: white;
+  border: 0;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.about-panel .eyebrow,
+.about-panel .about-mark,
+.about-panel .about-local { color: color-mix(in srgb, var(--teal) 32%, white); }
+.about-panel p { color: color-mix(in srgb, var(--teal) 18%, white); }
+.about-panel .about-local { border-color: color-mix(in srgb, white 14%, transparent); }
+.about-panel::after { color: color-mix(in srgb, var(--teal) 14%, transparent); }
+.about-copy > p { font-size: 15px; }
+
+.trust-stats { border-color: var(--line); }
+
+.service-card,
+.doctor-card,
+.request-form,
+.gallery-card,
+.contact-methods > a,
+.contact-methods > div {
+  border-color: var(--line);
+  border-radius: var(--radius-md);
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--navy) 3%, transparent);
+}
+
+.service-card { padding: 30px 26px; }
+.service-card:hover,
+.doctor-card:hover,
+.gallery-card:hover {
+  border-color: color-mix(in srgb, var(--teal) 42%, white);
+  box-shadow: var(--shadow-sm);
+}
+.service-card h3 { color: var(--navy); font-size: 16px; }
+.service-card p { font-size: 13px; }
+
+.facilities-section,
+.footer { background: var(--navy); }
+.facilities-section { position: relative; overflow: hidden; }
+.facilities-section::before {
+  content: '';
+  position: absolute;
+  width: 440px;
+  height: 440px;
+  right: -180px;
+  top: -210px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--teal) 22%, transparent);
+  pointer-events: none;
+}
+.facilities-section .container { position: relative; }
+.facility-item .icon-box { background: color-mix(in srgb, var(--teal) 28%, transparent); color: white; border-color: color-mix(in srgb, var(--teal) 46%, transparent); }
+.facility-item p { color: color-mix(in srgb, white 72%, var(--teal)); font-size: 13px; }
+.facility-item h3 { font-size: 16px; }
+.facility-highlight { border-radius: var(--radius-md); background: color-mix(in srgb, var(--teal) 25%, transparent); border-color: color-mix(in srgb, var(--teal) 46%, transparent); }
+
+.spotlight-section,
+.pale-section,
+.page-header { background: var(--paper); }
+.spotlight-photo { border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
+.spotlight-photo-label { border-radius: var(--radius-sm); border: 1px solid var(--line); }
+.doctor-avatar { background: var(--paper); color: var(--teal); }
+.avatar-plus { color: color-mix(in srgb, var(--teal) 16%, white); }
+.doctor-card { transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+.doctor-card:hover { transform: translateY(-4px); }
+
+.why-grid { gap: 20px; }
+.why-item {
+  padding: 28px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--navy) 3%, transparent);
+}
+.why-item h3 { color: var(--navy); font-size: 16px; }
+.why-item p { font-size: 13px; }
+
+.emergency-banner {
+  position: relative;
+  overflow: hidden;
+  background: var(--navy);
+  border: 1px solid color-mix(in srgb, var(--teal) 45%, transparent);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+.emergency-banner::after {
+  content: '';
+  position: absolute;
+  right: -70px;
+  bottom: -110px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--teal) 28%, transparent);
+  pointer-events: none;
+}
+.emergency-banner > * { position: relative; z-index: 1; }
+.emergency-banner .eyebrow { color: color-mix(in srgb, var(--teal) 30%, white); }
+.emergency-banner p { color: color-mix(in srgb, white 76%, var(--teal)); font-size: 13px; }
+.emergency-badge { color: white; background: var(--teal); }
+.emergency-numbers a { border-color: color-mix(in srgb, white 28%, transparent); border-radius: 999px; }
+
+.appointment-steps li > span { background: var(--teal); color: white; border: 0; }
+.request-form { padding: clamp(26px, 3vw, 40px); box-shadow: var(--shadow-sm); }
+.form-field label { color: var(--navy); font-size: 12px; }
+.form-field input,
+.form-field select,
+.form-field textarea {
+  background: var(--paper);
+  border-color: var(--line);
+  border-radius: 12px;
+  min-height: 48px;
+  color: var(--navy);
+  font-size: 13px;
+}
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus { background: white; border-color: var(--teal); }
+.form-success { background: var(--paper); border-color: var(--line); color: var(--teal); border-radius: var(--radius-sm); }
+
+.gallery-card { overflow: hidden; }
+.gallery-card img { aspect-ratio: 4 / 3; height: auto; transition: transform .35s ease; }
+.gallery-card:hover img { transform: scale(1.025); }
+
+.faq-list details {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding-inline: 20px;
+  margin-bottom: 10px;
+  background: white;
+}
+.faq-list details:first-child { border-top: 1px solid var(--line); }
+
+.location-grid iframe { border-color: var(--line); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
+
+.health-cta {
+  width: min(1240px, calc(100% - 96px));
+  margin-block: 74px;
+  padding: 46px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+}
+
+.page-header {
+  background:
+    radial-gradient(circle at 86% 12%, color-mix(in srgb, var(--teal) 14%, transparent), transparent 30%),
+    var(--paper);
+  border-bottom: 1px solid var(--line);
+  padding-block: 38px 68px;
+}
+.page-header h1 { color: var(--navy); font-size: clamp(40px, 4.4vw, 60px); }
+
+.filter-tabs button { border-color: var(--line); }
+.filter-tabs button.selected { background: var(--teal); border-color: var(--teal); }
+.service-search { border-color: var(--line); background: white; }
+.contact-methods > a,
+.contact-methods > div { transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+.contact-methods > a:hover { transform: translateY(-2px); border-color: var(--teal); box-shadow: var(--shadow-sm); }
+
+.whatsapp-float { background: var(--teal); box-shadow: var(--shadow-sm); }
+.whatsapp-tooltip { background: var(--navy); }
+.back-top { color: var(--teal); border-color: var(--line); box-shadow: var(--shadow-sm); }
+
+.footer { border-top: 5px solid var(--teal); }
+.footer .brand-icon { background: var(--teal); color: white; }
+.footer-grid > div > p,
+.footer-grid > div > a:not(.brand),
+.footer-hindi,
+.footer .disclaimer,
+.footer-bottom,
+.developer-credit { color: color-mix(in srgb, white 68%, var(--teal)); }
+.footer .disclaimer { border-color: color-mix(in srgb, var(--teal) 24%, transparent); }
+
+@media (max-width: 1100px) {
+  .health-cta { width: calc(100% - 64px); }
+}
+
+@media (max-width: 900px) {
+  .nav-inner { height: 82px; }
+  .mobile-navigation { border-top: 1px solid var(--line); }
+}
+
+@media (max-width: 640px) {
+  .hero { padding-block: 42px 78px; }
+  .hero h1 { font-size: clamp(42px, 12vw, 56px); letter-spacing: -.05em; }
+  .hero-copy > .hero-description { font-size: 13px; }
+  .photo-shell { border-radius: 24px; }
+  .quick-actions { border-radius: 18px; padding: 8px; }
+  .quick-actions > a { min-height: 67px; border-radius: 12px; }
+  .section { padding-block: 68px; }
+  .section-heading h2 { font-size: 34px; }
+  .about-panel { border-radius: 24px; }
+  .service-card { padding: 24px 20px; border-radius: 18px; }
+  .service-card p { font-size: 12px; }
+  .why-item { padding: 22px 18px; border-radius: 18px; }
+  .emergency-banner { border-radius: 24px; }
+  .request-form { border-radius: 22px; }
+  .gallery-card { border-radius: 16px; }
+  .health-cta { width: calc(100% - 40px); margin-block: 36px; padding: 30px 24px; border-radius: 24px; }
+  .page-header { padding-block: 30px 52px; }
+  .page-header h1 { font-size: 38px; }
+}
+
+@media (max-width: 360px) {
+  .health-cta { width: calc(100% - 32px); }
+}
