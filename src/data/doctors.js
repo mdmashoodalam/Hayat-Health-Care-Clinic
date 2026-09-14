@@ -1,3 +1,5 @@
+import doctorAAgarwal from '../assets/clinic/doctor-a-agarwal.jpeg';
+
 export const doctors = [
   {
     id:'rizwan', name:'Dr. Md. Rizwan', specialty:'General Physician & Surgeon',
@@ -13,6 +15,12 @@ export const doctors = [
     id:'agarwal', name:'Dr. A. Agarwal', specialty:'General & Laparoscopic Surgeon',
     qualifications:['M.B.B.S.', 'M.S. (MNS)', 'D.C.P.', 'D.N.B.', 'F.M.A.S.'], affiliations:[],
     expertise:['General Surgery', 'Laparoscopic Surgery'],
+    photo:{
+      src:doctorAAgarwal,
+      alt:'Dr. A. Agarwal, General and Laparoscopic Surgeon at Hayat Health Care Clinic',
+      width:800,
+      height:1200,
+    },
   },
   {
     id:'rahman', name:'Dr. S. Rahman', specialty:'General Surgeon',
